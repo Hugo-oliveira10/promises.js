@@ -72,7 +72,7 @@ const resolveRace = Promise.race ([p4,p5,p6]).then((data) => {
 })
 
 //Fecth API - API GitHub
-const userName = 'Hugo-Oliveira10'
+const userName = 'Hugo-oliveira10'
 
 fetch('https://api.github.com/users/'+userName, {
     method: 'GET',
@@ -82,7 +82,7 @@ fetch('https://api.github.com/users/'+userName, {
 }).then((response) =>{
     return responde.json();
 }).then((data) =>{
-    console.log(data)
+    console.log(data.name)
 }).catch((error)=> {
     console.log(error)
 })
