@@ -52,7 +52,7 @@ const resolveAll = Promise.all([p1,p2,p3]).then((data) => {
     console.log(data)
 })
 
-//resolvendo varias promises com Race
+//resolvendo varias promises com Race - respeita o tempo individual de cada promise
 const p4 = new Promise ((resolve, reject)=> {
     setTimeout(() =>{
         console.log('P4 OK!')
@@ -69,4 +69,20 @@ const p6 = new Promise ((resolve, reject)=> {
 
 const resolveRace = Promise.race ([p4,p5,p6]).then((data) => {
     console.log(data)
+})
+
+//Fecth API - API GitHub
+const userName = 'Hugo-Oliveira10'
+
+fetch('https://api.github.com/users/'+userName, {
+    method: 'GET',
+    headers: {
+        accept: 'aplication/vnd.github.v3+json'
+    },
+}).then((response) =>{
+    return responde.json();
+}).then((data) =>{
+    console.log(data)
+}).catch((error)=> {
+    console.log(error)
 })
